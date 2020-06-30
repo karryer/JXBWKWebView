@@ -23,8 +23,6 @@
     
     self.title = @"商品列表";
     
-    NSLog(@"param = %@",self.params);
-    
     self.btnFail = [UIButton buttonWithType:UIButtonTypeSystem];
     self.btnFail.frame = CGRectMake(0, 0, 100, 50);
     self.btnFail.center = self.view.center;

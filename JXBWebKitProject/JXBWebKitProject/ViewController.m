@@ -26,6 +26,8 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Warning" style:0 target:self action:@selector(warningAcition)];
+    
     self.navigationController.navigationBar.translucent = NO;
     self.tableView.estimatedRowHeight = 80;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -54,7 +56,7 @@
     H5EnterModel *model4 = [[H5EnterModel alloc] init];
     model4.title = @"请求带cookie";
     model4.detailTitle = @"cookie={key1=value1;key2=value2}";
-    model4.url = @"http://passport.58corp.com";
+    model4.url = @"http://www.baidu.com";
     model4.cookie = @{@"key1":@"value1", @"key2":@"value2"};
     [self.models addObject:model4];
     
@@ -196,6 +198,10 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)warningAcition {
+    [[NSNotificationCenter defaultCenter] postNotificationName:UIApplicationDidReceiveMemoryWarningNotification object:nil];
 }
 
 
